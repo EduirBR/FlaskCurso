@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+
+<h1>Welcome to the Web Site</h1>
+{% if data.name %}
+<p>Hola {{data.name}}</p>
+{% else %}
+<p>Hola, Persona</p>
+{% endif %}
+
+<p>
+    Hoy es {{data.date | today}}
+</p>
+{% endblock %}
