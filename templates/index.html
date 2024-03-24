@@ -1,17 +1,20 @@
 {% extends "base.html" %}
 
-{% block title %}Welcome{% endblock %}
+{% block title %}
+Home
+{% endblock title %}
 
 {% block content %}
-
-<h1>Welcome to the Web Site</h1>
-{% if data.name %}
-<p>Hola {{data.name}}</p>
-{% else %}
-<p>Hola, Persona</p>
-{% endif %}
-
-<p>
-    Hoy es {{data.date | today}}
-</p>
-{% endblock %}
+<div class="container-sm d-flex flex-column text-center justify-content-center align-items-center" style="height: 90vh">
+  <h1 class="display-3">Welcome to TodoList</h1>
+  <p class="lead">
+    Aplicacion de lista de tareas simple, Creada con la finalidad de aprender Flask, Sientase libre de registrarse y probarla.
+  </p>
+  <hr class="m-4">
+  <p>Tienes una cuenta?</p>
+  <div class="d-flex justify-content-center">
+    <a href="{{url_for('auth.login')}}" class="btn btn-primary mx-2">Iniciar Session</a>
+    <a href="{{url_for('auth.register')}}" class="btn btn-primary mx-2">Registrarse</a>
+  </div>
+</div>
+{% endblock content %}
